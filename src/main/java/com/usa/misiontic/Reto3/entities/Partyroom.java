@@ -12,7 +12,7 @@ public class Partyroom implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idPartyroom;
+    private Integer id;
     private String name;
     private String owner;
     private Integer capacity;
@@ -30,12 +30,12 @@ public class Partyroom implements Serializable {
     @JsonIgnoreProperties("partyroom")
     private List<Reservation> reservations;
 
-    public Integer getIdPartyroom() {
-        return idPartyroom;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdPartyroom(Integer idPartyroom) {
-        this.idPartyroom = idPartyroom;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

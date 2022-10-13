@@ -21,10 +21,10 @@ public class PartyroomService {
         return partyroomRepository.getPartyroom(id);
     }
     public Partyroom save(Partyroom p){
-        if(p.getIdPartyroom()==null){
+        if(p.getId()==null){
             return partyroomRepository.save(p);
         }else{
-            Optional<Partyroom> e = partyroomRepository.getPartyroom(p.getIdPartyroom());
+            Optional<Partyroom> e = partyroomRepository.getPartyroom(p.getId());
             if(e.isPresent()){
                 return p;
             }else{
@@ -33,8 +33,8 @@ public class PartyroomService {
         }
     }
     public Partyroom update(Partyroom p){
-        if(p.getIdPartyroom()!=null){
-            Optional<Partyroom> q = partyroomRepository.getPartyroom(p.getIdPartyroom());
+        if(p.getId()!=null){
+            Optional<Partyroom> q = partyroomRepository.getPartyroom(p.getId());
             if(q.isPresent()){
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
